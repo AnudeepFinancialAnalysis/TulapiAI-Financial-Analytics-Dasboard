@@ -50,7 +50,7 @@ def valuation_competitors_chart(df):
 
     fig.add_hline(y=grok_metrics["valuation_clean"],
                   line_dash="dot", line_color="crimson",
-                  annotation_text="Tualpiai",
+                  annotation_text="Tulapiai",
                   annotation_position="top left")
 
     return style_fig(fig)
@@ -69,7 +69,7 @@ def growth_scatter_plot(df):
         y=[grok_metrics["total_funding_clean"]],
         mode='markers+text',
         marker=dict(size=30, color='crimson', line=dict(width=3, color='white'), opacity=1.0, symbol='star'),
-        name='Tualpiai', text=['Tualpiai'], textposition='top right', showlegend=True
+        name='Tulapiai', text=['Tulapiai'], textposition='top right', showlegend=True
     ))
     # Add a small negative offset to y-axis minimum to prevent marker cutoff
     y_max = chart_df['total_funding_clean'].max() * 1.1
@@ -87,7 +87,7 @@ def funding_per_employee_competitors_chart(df):
                      (df['funding_per_employee'] >= min_fpe) &
                      (df['funding_per_employee'] <= max_fpe)].copy()
 
-    # Ensure Tualpiai is always present
+    # Ensure Tulapiai is always present
     if not (competitors['company_name'] == grok_metrics["company_name"]).any():
         extra_row = pd.DataFrame([{
             'company_name': grok_metrics["company_name"],
@@ -98,16 +98,16 @@ def funding_per_employee_competitors_chart(df):
     competitors = competitors.sort_values('funding_per_employee', ascending=False)
 
     fig = px.bar(competitors, x='company_name', y='funding_per_employee',
-                 title='Funding per Employee: Competitors Near Tualpiai',
+                 title='Funding per Employee: Competitors Near Tulapiai',
                  labels={'funding_per_employee': 'Funding / Employee ($)'})
 
     fig.add_hline(y=grok_metrics["funding_per_employee"],
                   line_dash="dot", line_color="crimson",
-                  annotation_text="Tualpiai",
+                  annotation_text="Tulapiai",
                   annotation_position="top left")
 
     fig.add_annotation(
-        x='Tualpiai',
+        x='Tulapiai',
         y=grok_metrics["funding_per_employee"],
         text=f"${grok_metrics['funding_per_employee']:,.0f}",
         showarrow=True,
@@ -135,7 +135,7 @@ def valuation_per_employee_competitors_chart(df):
                      (df['valuation_per_employee'] >= min_vpe) &
                      (df['valuation_per_employee'] <= max_vpe)].copy()
 
-    # Ensure Tualpiai is always present
+    # Ensure Tulapiai is always present
     if not (competitors['company_name'] == grok_metrics["company_name"]).any():
         extra_row = pd.DataFrame([{
             'company_name': grok_metrics["company_name"],
@@ -146,16 +146,16 @@ def valuation_per_employee_competitors_chart(df):
     competitors = competitors.sort_values('valuation_per_employee', ascending=False)
 
     fig = px.bar(competitors, x='company_name', y='valuation_per_employee',
-                 title='Valuation per Employee: Competitors Near Tualpiai',
+                 title='Valuation per Employee: Competitors Near Tulapiai',
                  labels={'valuation_per_employee': 'Valuation / Employee ($)'})
 
     fig.add_hline(y=grok_metrics["valuation_per_employee"],
                   line_dash="dot", line_color="crimson",
-                  annotation_text="Tualpiai",
+                  annotation_text="Tulapiai",
                   annotation_position="top left")
 
     fig.add_annotation(
-        x='Tualpiai',
+        x='Tulapiai',
         y=grok_metrics["valuation_per_employee"],
         text=f"${grok_metrics['valuation_per_employee']:,.0f}",
         showarrow=True,
@@ -191,7 +191,7 @@ def headcount_vs_valuation_competitors_chart(df):
         (df['current_employees'] >= min_emp) & (df['current_employees'] <= max_emp)
     ].copy()
 
-    # Ensure Tualpiai is always present
+    # Ensure Tulapiai is always present
     if not (competitors['company_name'] == grok_metrics["company_name"]).any():
         extra_row = pd.DataFrame([{
             'company_name': grok_metrics["company_name"],
@@ -207,22 +207,22 @@ def headcount_vs_valuation_competitors_chart(df):
         y='valuation_clean',
         color='Industry',
         hover_name='company_name',
-        title='Current Employees vs Valuation ($): Tualpiai and Closest Peers',
+        title='Current Employees vs Valuation ($): Tulapiai and Closest Peers',
         labels={'current_employees': 'Employees', 'valuation_clean': 'Valuation ($)'}
     )
 
-    # Highlight Tualpiai as a unique marker with label
+    # Highlight Tulapiai as a unique marker with label
     fig.add_trace(go.Scatter(
         x=[grok_metrics["current_employees"]],
         y=[grok_metrics["valuation_clean"]],
         mode='markers+text',
         marker=dict(size=20, color='crimson', line=dict(width=1, color='black')),
-        name='Tualpiai',
-        text=['Tualpiai'],
+        name='Tulapiai',
+        text=['Tulapiai'],
         textposition='top right'
     ))
 
-    # Y-axis: from a little below zero to Tualpiai's valuation + 3B
+    # Y-axis: from a little below zero to Tulapiai's valuation + 3B
     buffer = 0.06 * (odin_valuation + 3_000_000_000)
     fig.update_yaxes(range=[-buffer, odin_valuation + 3_000_000_000], dtick=500_000_000)
 
@@ -250,8 +250,8 @@ def funding_vs_founding_year(df):
             y=[grok_metrics["total_funding_clean"]],
             mode='markers+text',
             marker=dict(size=20, color='crimson', line=dict(width=1, color='black')),
-            name='Tualpiai',
-            text=['Tualpiai'],
+            name='Tulapiai',
+            text=['Tulapiai'],
             textposition='top right'
         )
     )
