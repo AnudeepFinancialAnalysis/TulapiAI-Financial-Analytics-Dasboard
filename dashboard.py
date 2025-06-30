@@ -15,7 +15,7 @@ from pathlib import Path
 
 # ---- PAGE CONFIG ----
 st.set_page_config(
-    page_title='Tualpiai vs Peers | Analytics',
+    page_title='Tulapiai vs Peers | Analytics',
     layout='wide',
     initial_sidebar_state='collapsed'
 )
@@ -61,7 +61,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---- TITLE & INTRO ----
-st.title("🧠 Tualpiai vs the AI World")
+st.title("🧠 Tulapiai vs the AI World")
 st.markdown(
     """
     <div style="color:#9cdcf5; font-size:1.15em; font-weight:500; margin-bottom:1em;">
@@ -85,7 +85,7 @@ tabs = st.tabs([
 with tabs[0]:
     st.header("Growth vs Funding")
     st.plotly_chart(growth_scatter_plot(df), use_container_width=True)
-    st.markdown('<div class="caption-text">Each company’s funding is compared against its employee growth rate. Tualpiai appears as a high-growth, well-funded outlier.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="caption-text">Each company’s funding is compared against its employee growth rate. Tulapiai appears as a high-growth, well-funded outlier.</div>', unsafe_allow_html=True)
 
 with tabs[1]:
     st.header("Capital Intensity")
@@ -128,10 +128,10 @@ st.markdown("""
         <b style="color:#F7941E;">Storytelling + Analysis + Execution = Impact.</b>
     </p>
     <hr style="border-top: 1.3px dashed #777; margin: 1.2em 0 1.1em 0;">
-    <h3 style="color:#71fae9; font-size:1.38em; margin-bottom:0.45em; font-family: 'Fira Sans', Arial, sans-serif;">Why Tualpiai?</h3>
+    <h3 style="color:#71fae9; font-size:1.38em; margin-bottom:0.45em; font-family: 'Fira Sans', Arial, sans-serif;">Why Tulapiai?</h3>
     <p style="font-size:1.08em; color:#e4f6fa;">
-        Tualpiai sits at the intersection of <b>real-world ML, product innovation, and impact</b>—right where I want to be.<br>
-        My Tualpiail rigor, ML know-how, and energy can help unlock your data's full value and push the company’s vision to the next level.<br>
+        Tulapiai sits at the intersection of <b>real-world ML, product innovation, and impact</b>—right where I want to be.<br>
+        My Tulapiail rigor, ML know-how, and energy can help unlock your data's full value and push the company’s vision to the next level.<br>
         Let's build, experiment, and create solutions that scale—together.
     </p>
 </div>
